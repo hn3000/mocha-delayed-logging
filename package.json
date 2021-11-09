@@ -1,16 +1,25 @@
 {
   "name": "@hn3000/mocha-delayed-logging",
   "version": "1.0.1",
-  "description": "",
+  "description": "Withhold log output for successful unit tests, making it easier to spot the reason for failures in code with heavy logging. And avoid unit tests working by 'ocular inspection'.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "cover": "nyc mocha"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["mocha", "logging", "unit test"],
+  "author": "Harald Niesche",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.3.0",
-    "mocha": "^8.2.1"
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html",
+      "lcov"
+    ]
   }
 }
