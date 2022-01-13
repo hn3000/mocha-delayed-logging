@@ -5,17 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "cover": "nyc mocha"
+    "cover": "c8 npm test"
   },
   "keywords": ["mocha", "logging", "unit test"],
   "author": "Harald Niesche",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.3.0",
-    "mocha": "^8.2.1",
-    "nyc": "^15.1.0"
+    "chai": "^4.3.4",
+    "c8": "7.11.0",
+    "mocha": "^9.1.3"
   },
-  "nyc": {
+  "c8": {
+    "include": [
+      "index.js",
+      "test/*.js"
+    ],
     "reporter": [
       "text",
       "html",
